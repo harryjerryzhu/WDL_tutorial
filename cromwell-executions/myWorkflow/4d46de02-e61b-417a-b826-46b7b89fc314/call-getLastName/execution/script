@@ -1,0 +1,31 @@
+#!/bin/bash
+
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution
+tmpDir=$(mkdir -p "/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/tmp.5c544330" && echo "/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/tmp.5c544330")
+
+export _JAVA_OPTIONS=-Djava.io.tmpdir="$tmpDir"
+export TMPDIR="$tmpDir"
+export HOME="$HOME"
+(
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution
+
+)
+(
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution
+
+
+echo Nihao,Zhu
+)  > '/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution/stdout' 2> '/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution/stderr'
+echo $? > /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution/rc.tmp
+(
+# add a .file in every empty directory to facilitate directory delocalization on the cloud
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution
+find . -type d -empty -print0 | xargs -0 -I % touch %/.file
+)
+(
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution
+sync
+
+
+)
+mv /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution/rc.tmp /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getLastName/execution/rc

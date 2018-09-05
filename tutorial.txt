@@ -1,0 +1,28 @@
+To successfully start a WDL,prepare to_do_lists:
+
+1.check java version using java -version, update to 1.8
+
+2.check cromwell existence, otherwise install cormwell
+  here,using cromwell-34.jar
+
+3.check womtool existence, otherwise install womtool
+  here,using womtool-34.jar
+
+
+
+
+
+Then prepare myWorkflow.wdl file and edit it
+
+	validate the wdl file using
+	java -jar ../womtool-34.jar validate myWorkflow.wdl
+
+
+Prepare input file for myWorkflow.wdl using following script and edit it 
+
+	java -jar ../womtool-34.jar inputs myWorkflow.wdl > myWorkflow_inputs.json
+
+
+Finally, run the myWorkflow.wdl file
+
+	java -jar ../cromwell-34.jar run myWorkflow.wdl --inputs myWorkflow_inputs.json

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution
+tmpDir=$(mkdir -p "/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/tmp.ddac7824" && echo "/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/tmp.ddac7824")
+
+export _JAVA_OPTIONS=-Djava.io.tmpdir="$tmpDir"
+export TMPDIR="$tmpDir"
+export HOME="$HOME"
+(
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution
+
+)
+(
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution
+
+
+echo Nihao,Zhu,Haifeng
+)  > '/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution/stdout' 2> '/home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution/stderr'
+echo $? > /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution/rc.tmp
+(
+# add a .file in every empty directory to facilitate directory delocalization on the cloud
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution
+find . -type d -empty -print0 | xargs -0 -I % touch %/.file
+)
+(
+cd /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution
+sync
+
+
+)
+mv /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution/rc.tmp /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution/rc

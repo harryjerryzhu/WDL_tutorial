@@ -1,0 +1,2 @@
+#!/bin/bash
+/bin/bash /home/woodmanlab/Desktop/WDL/wdl_tutorial/cromwell-executions/myWorkflow/4d46de02-e61b-417a-b826-46b7b89fc314/call-getFirstName/execution/script
